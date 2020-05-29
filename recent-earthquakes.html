@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="South Carolina Department of Natural Resources - Geology Section information.">
+    <meta name="author" content="South Carolina Department of Natural Resources - Geology Section">
+
+    <title>Recent Earthquakes - SCDNR</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/geol.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/label.css" />
+	<link rel="stylesheet" href="css/MarkerCluster.css">
+	<link rel="stylesheet" href="css/MarkerCluster.Default.css">
+	<link href='css/leaflet.fullscreen.css' rel='stylesheet' />
+	<link href='css/leaflet.zoomhome.css' rel='stylesheet' />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="js/label.js"></script>
+	<script src="js/Autolinker.min.js"></script>
+	<script src="js/leaflet-pip.min.js"></script>
+	<script src='js/Leaflet.fullscreen.min.js'></script>
+	<script src='js/leaflet.zoomhome.min.js'></script>
+
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />	
+	
+	    <style type="text/css">
+        #content {width:98%;height:100%;display: block;margin: 0 auto;max-width: 950px;font-family: Arial, sans-serif;color:#444;}
+        /*map related CSS*/
+        #mapdiv{width:100%;height:500px;min-height: 500px;margin-top:3px;}
+        #map {width:68%;height:100%;display: inline-block;float:left;margin:0 auto;min-height: 500px;border:1px solid #bbb;}
+        #eqTable {width: 30%;height:98%;min-height:489px;display: inline-block;padding:5px;border:1px solid #bbb;float:right;overflow-y: scroll;font-size: 0.9em;margin:0 auto;}
+        .topteneq{margin:2px;overflow-x:hidden;margin-top:5px;padding:5px;}
+        .topteneq:hover{box-shadow:1px 1px 2px gray;cursor: pointer;}
+        .topteneq div {margin:2px;text-overflow: ellipsis;}
+        #eqTable h4 {margin:-5px;background-color:#afcecf;color:#444;padding:4px 8px;border-bottom:1px solid #bbb;}
+        .topteneq table {border-collapse:collapse;display: block;}
+        .topteneq td {border-bottom:1px solid #bbb;}
+        .topteneq td:last-child {padding-left:20%;}
+        .topteneq:nth-child(odd) {background:#eee;}
+        .bottom-row{line-height:140%;}
+        .legend{line-height:20px;color:#555;font-size:1em;}
+		.legend i{width:12px;height:12px;float:left;margin-right:8px;opacity:0.7;border-radius:12px;border:1px solid #222;}
+        #lowerlegend{border-top:1px solid #aaa;margin-top:3px;padding-top:4px;}
+        #lowerlegend i {opacity:0.9;}
+        #large{width:20px;height:20px;border-radius:20px;}
+        #medium{width:14px;height:14px;border-radius:14px;}
+        #small{width:8px;height:8px;border-radius:8px;}
+        .novis {display:none;}
+        .info {
+            padding: 6px 8px;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+
+        /*other parts of the page CSS*/
+        #mapheader{width:100%;height:auto;background-color:#5f9e9f;margin-bottom:0px;margin-top:10px;display: inline-block;padding:5px 2%;border-bottom:1px solid #111;}
+        #mapheader h4 {margin:0;float:left;margin:0 20px 0 0;color:#fff;}
+        #mapheader p, #mapheader a {margin:0;padding:0;color:#fff;}
+        .resource{display:inline-block;width:90%;margin:5px 3%;background-color:#eee;padding-left:10px;}
+        .resource h4{display: inline-block; text-decoration: underline;width:50%;}
+        .resource h4:hover{text-decoration:none;}
+        .resource img {width:200px;float:right;border:1px solid #fff; margin:6px; padding:3px;}
+        h5{color:#666;font-size:0.9em;}
+        .caption{font-size: 0.8em;}
+        #loading{padding:20px;width:100%;}
+        /*media queries*/
+
+        @media only screen and (max-width:750px) {
+            #mapdiv{height:550px;}
+            #eqTable {display:block;width:90%;float:none;margin-top:20px;height:170px;min-height: 170px;}
+            #map {display: block;width:92%;float:none;height:350px;min-height: 350px;}
+            .resource h4{width:95%;}
+            .resource img{float:none;margin:0 auto;}
+            #mapheader{font-size: 0.8em;}
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-white fixed-top">
+        <div class="container">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
+            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Geological Survey</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="about.html">About Us</a>
+						<a class="dropdown-item" href="programs.html">Programs</a>
+						<a class="dropdown-item" href="core-repository.html">Core Repository</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Earthquakes</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
+						<a class="dropdown-item" href="earthquakes.html">Overview</a>
+						<a class="dropdown-item" href="recent-earthquakes.html">Recent Earthquakes</a>
+						<a class="dropdown-item" href="earthquake-info.html">Earthquake Information</a>
+						<a class="dropdown-item" href="earthquake-intensity.html">Earthquake Intensities</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
+						<a class="dropdown-item" href="education.html">Education</a>
+						<a class="dropdown-item" href="minerals.html">Minerals</a>
+						<a class="dropdown-item" href="meteorites.html">Meteorites</a>
+						<a class="dropdown-item" href="segsa.html">SEGSA Talks</a>
+						</div>
+					</li>				
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataFour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Geology</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataFour">
+						<a class="dropdown-item" href="sc-geology.html">Overview</a>
+						<a class="dropdown-item" href="https://scdnr.maps.arcgis.com/apps/Viewer/index.html?appid=735411a2f5714f28a424422296f77bb1">Geology of SC Application</a>
+						<a class="dropdown-item" href="geologic-hazards.html">Geologic Hazards</a>
+						<a class="dropdown-item" href="https://www.arcgis.com/apps/MapSeries/index.html?appid=8e44b2c5b05e499ab7d3ac86ee683b8e">Geological Society Field Trip</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->					
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataFive" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications & Data</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataFive">
+						<a class="dropdown-item" href="publications.html">Publications</a>
+						<a class="dropdown-item" href="journals.html">Journals</a>
+						<a class="dropdown-item" href="digital-data.html">Digital Data</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->			
+                </ul>
+            </div>
+			<a href="index.html"><img src="images/SCGSlogo.png" alt="SCGS logo" id="survey-logo"></a>
+        </div>
+    </nav>
+
+    <!-- Header with Background Image -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
+                    <h1 class="page-header">Recent Earthquakes</h1>
+                    <p class="text-white lead">Use the application below to search for recent earthquakes in or near South Carolina.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    
+	<div class="container">
+	   <div class="white-bg">
+			<div id="content">
+				<div id="mapheader">
+					<h4>Recent Earthquakes</h4>
+					<p>Earthquakes since January 1, 2006. <a href="http://earthquake.usgs.gov/earthquakes/dyfi/" target="_blank" class="style2"><em>Did you feel it? Register your observations with the USGS</em></a></p>
+				</div>
+
+				<div id="mapdiv">
+					<div id="map"></div>
+					<div id="eqTable">
+						<h4>10 Most Recent Earthquakes</h4>
+						<div id="eqlist"><div id="loading">Loading EQ Data...</div></div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="eq-box">
+				<h4>Sign up for the USGS <a href="https://earthquake.usgs.gov/ens/" target="_blank">Earthquake Notification Service</a> to receive earthquake notifications by email or cell phone.</h4>
+			</div>
+		</div>
+		<div class="white-bg">
+		
+			<h2>Earthquake Resources</h2>
+
+				<div class="row my-4">
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="pdfs/GGMS2.pdf">Earthquake Hazards Map of the South Carolina Coastal Plain, GGMS-2</a></h2>
+					<img class="card-img-top" src="images/eqhazards.JPG" alt="earthquake hazards map" title="earthquake hazards map">
+				</div>              
+				</div>
+				</div>
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="pdfs/EQGuide2012.pdf">South Carolina Earthquake Guide (SCEMD)</a></h2><br>
+					<img class="card-img-top" src="images/eqguide.JPG" alt="earthquake guide" title="earthquake guide">
+				</div>              
+				</div>
+				</div>
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="pdfs/Earthquakes.pdf">Earthquakes and Seismic Waves Educational PowerPoint</a></h2><br>
+					<img class="card-img-top" src="images/eqpowerpoint.JPG" alt="earthquake powerpoint" title="earthquake powerpoint">
+				</div>              
+				</div>
+				</div>
+				</div>
+
+				<div class="row my-4">
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="https://www.scemd.org/media/1141/eq_study.pdf">Comprehensive Seismic Risk and Vulnerability Study for the State of South Carolina (SCEMD)</a></h2>
+					<img class="card-img-top" src="images/quakemap.JPG" alt="Seismic Risk" title="Seismic Risk">
+				</div>              
+				</div>
+				</div>
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="https://www.earthquakecountry.org/step5/">Do you know what to do in an earthquake?</a></h2><br><br>
+					<img class="card-img-top" src="images/dropcoverhold.JPG" alt="drop, cover, and hold" title="drop, cover, and hold">
+				</div>              
+				</div>
+				</div>
+          
+				<div class="col-md-4 my-1">
+				<div class="card">
+			
+				<div class="card-body">
+					<h2 class="card-title"><a href="https://www.usgs.gov/natural-hazards/earthquake-hazards">United States Geological Survey Earthquake Hazards Program</a></h2><br><br>
+					<img class="card-img-top" src="images/USGS_logo.PNG" alt="earthquake hazards" title="earthquake hazards">
+				</div>              
+				</div>
+				</div>
+				</div>				
+		</div>
+		</div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center">     	
+				<p><strong>Links</strong><br>
+					<a href="SCO2/index.html">Carbon Sequestration</a>
+					<br><a href="earthquakes.html">Earthquakes in SC</a>
+					<br><a href="https://earthquake.usgs.gov/ens/">Earthquake Notification Service</a>
+					<br><a href="education.html#rockandmineral">Rocks and Minerals Kit</a>
+					<br><a href="meteorites.html">Meteorites</a>
+					<br><a href="photo-gallery.html">Photo Galleries</a>
+					<br><a href="minerals.html">Mineral Resources</a>
+					<br><a href="segsa.html">SEGSA Presentations</a>
+					<br><a href="http://hydrology.dnr.sc.gov/index.html">Hydrology Section</a>				
+					<br><a href="http://hydrology.dnr.sc.gov/water-planning.html">SC Water Plan</a>
+					<br><a href="http://www.dnr.sc.gov/water/flood/index.html">Flood Mitigation Program</a>
+					<br><a href="geology-news.html">Archived Survey News</a>
+					<br><a href="links.html">Helpful Links</a></p>
+                </div>
+				<div class="col-lg-6 text-center">                
+                    <p>South Carolina Geological Survey<br>
+                        5 Geology Road<br>
+                        Columbia, SC 29212<br>
+                        <a href="index.html">dnr.sc.gov/geology/index.html</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/geology/index.html"><img src="images/SCGSlogo.png" alt="SCGS logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
+            
+            </div>
+            
+        </div>        
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>  
+    <script src="js/eq.js"></script>
+  </body>
+
+</html>
