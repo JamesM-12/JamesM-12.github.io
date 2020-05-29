@@ -1,0 +1,248 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+/*BASIC LAYOUT STUFF*/
+body {
+    padding-top: 54px;
+    background-color:#eaefef;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+/*FONT STUFF - LOADING FONTS FROM cloudtypography ACCOUNT*/
+
+h1, h2, h3, h4, h5, p, a {
+    color:#051f38;
+}
+
+.navbar-brand{
+    font-weight: 500;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+#navbarResponsive{
+    text-align: center;
+}
+#nav-logo{
+    height:75px;
+    width:auto;
+    position: absolute;
+    top:10px;
+    left:10px
+}
+#nav-logo img{
+    width:75px;
+    height:auto;
+}
+.nav-link{
+    font-size:1.1rem;
+}
+a {text-decoration: underline;}
+
+.white-bg{
+    background-color:#fff;
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #ddd;
+    margin: 15px 0;
+}
+
+/*HEADER, NAVBAR, BACKGROUND*/
+.business-header {
+    height: 20%;
+    min-height: 120px;
+    background: url('../images/clouds.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.navbar,
+.dropdown-menu {
+    background-color: #262c40;
+}
+
+@media (max-width: 992px) {
+    .dropdown-menu {
+        text-align: center;
+    }
+}
+
+.navbar a {
+    color: #fff;
+}
+.navbar {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.page-header{
+    color:white;
+    font-size:3em;
+}
+.background-text{
+    background:rgba(0,0,0,0.3)
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+.dropdown-item:hover {
+    text-decoration: underline;
+	background-color: #262c40;
+	color: white;
+}
+
+.navbar-toggler {
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.5)
+}
+
+.navguide {
+    font-size:12px;
+    position: relative;
+    top:-50px;
+    left: 10px;
+    color:#842932;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: #6e7b82;
+}
+
+.footer-logo{
+    text-align: center;
+    max-width: 100px;
+}
+#copyright {
+    font-size: 0.8em;
+}
+
+/*ADDITIONAL MEDIA QUERIES*/
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size:0.85em;
+        margin-left:-5px;
+    }
+    .navbar {padding:0.9rem;}
+    .navbar-toggler {padding:0;}
+}
+
+.closed {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/rightarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.open {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/downarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.figcap {
+	font-size:12px;
+}
+
+.centering {
+	text-align: center;
+}
+
+.graytext {
+	color: gray;
+	font-size:14px;
+}
+
+.graytext a {
+	color: gray;
+}
+
+.graytext a:hover {
+	color: black;
+}
+
+.toggler h5 {
+    border-radius:4px;
+    margin:5;
+    line-height: 1.5em;
+	font-size: 18px;
+}
+
+.toggler h5:hover {
+	cursor:pointer;
+	background-color: #ddd;
+	border-radius:4px;
+}
+
+.toggler p {
+	display:none;
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.allDocsClose:hover, .allDocsOpen:hover {border:0px;}
+
+.allDocsClose, .allDocsOpen {
+    text-decoration: underline;
+    cursor: pointer;
+    color:blue;
+    font-size:1em;
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 3px 6px;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+h2:target {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
+#sco2-logo{
+    height:75px;
+    width:auto;
+    position: absolute;
+    top:10px;
+    right:10px
+}
+
+iframe {
+	width: 560px;
+	height: 315px;
+}
+
+@media (max-width: 768px) {
+    iframe {width: 280px;
+	height: 157px;}
+}
+
+.thirdwidth {
+	width: 30%;
+}
+
+.halfwidth {
+	width: 50%;
+}
+
+.threequarterwidth {
+	width: 75%;
+}
+
+.ninetywidth {
+	width: 90%;
+}
+
+.fullwidth {
+	width: 100%;
+}
