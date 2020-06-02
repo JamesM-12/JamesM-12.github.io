@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="South Carolina Department of Natural Resources - Geology Section information.">
+    <meta name="author" content="South Carolina Department of Natural Resources - Geology Section">
+
+    <title>Meteorites - SCDNR</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/geol.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+</head>
+
+<body>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-white fixed-top">
+        <div class="container">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
+            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Geological Survey</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="about.html">About Us</a>
+						<a class="dropdown-item" href="programs.html">Programs</a>
+						<a class="dropdown-item" href="core-repository.html">Core Repository</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Earthquakes</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
+						<a class="dropdown-item" href="earthquakes.html">Overview</a>
+						<a class="dropdown-item" href="recent-earthquakes.html">Recent Earthquakes</a>
+						<a class="dropdown-item" href="earthquake-info.html">Earthquake Information</a>
+						<a class="dropdown-item" href="earthquake-intensity.html">Earthquake Intensities</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
+						<a class="dropdown-item" href="education.html">Education</a>
+						<a class="dropdown-item" href="minerals.html">Minerals</a>
+						<a class="dropdown-item" href="meteorites.html">Meteorites</a>
+						<a class="dropdown-item" href="segsa.html">SEGSA Talks</a>
+						</div>
+					</li>				
+					<!--Data Dropdown-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataFour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Geology</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataFour">
+						<a class="dropdown-item" href="sc-geology.html">Overview</a>
+						<a class="dropdown-item" href="https://scdnr.maps.arcgis.com/apps/Viewer/index.html?appid=735411a2f5714f28a424422296f77bb1">Geology of SC Application</a>
+						<a class="dropdown-item" href="geologic-hazards.html">Geologic Hazards</a>
+						<a class="dropdown-item" href="https://www.arcgis.com/apps/MapSeries/index.html?appid=8e44b2c5b05e499ab7d3ac86ee683b8e">Geological Society Field Trip</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->					
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataFive" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications & Data</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataFive">
+						<a class="dropdown-item" href="publications.html">Publications</a>
+						<a class="dropdown-item" href="journals.html">Journals</a>
+						<a class="dropdown-item" href="digital-data.html">Digital Data</a>
+						</div>
+                    </li>					
+					<!--Data Dropdown-->			
+                </ul>
+            </div>
+			<a href="index.html"><img src="images/SCGSlogo.png" alt="SCGS logo" id="survey-logo"></a>
+        </div>
+    </nav>
+
+    <!-- Header with Background Image -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
+                    <h1 class="page-header">Meteorites</h1>
+                    <p class="text-white lead">South Carolina claims 6 known meteorites.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+	<div class="container">
+		<div class="white-bg">
+			<div class="row">
+				<div class="col-lg-7">
+					<h2>Overview</h2>				
+					<p>Charles Upham Shepard, a professor at South Carolina Medical College in Charleston became the state’s first known meteorite expert. Shepard started his personal meteorite record in 1843 with the Bishopville Meteorite. Today, South Carolina claims only six known meteorites (out of 1,926 in the United States, according to The Meteoritical Society <a href="https://www.lpi.usra.edu/meteor/metbull.php">database</a>).</p>
+				</div> 
+				<div class="col-lg-5 centering">
+					<img src="images/BishopvilleMeteorite.jpg" class="img-fluid" alt="Bishopville Meteorite" title="Bishopville Meteorite"><p class="meteorite graytext">Bishopville (Aubrite)<br>Photo Credit: Jay Piatek with The Meteoritical Society</p>
+				</div>
+			</div>
+		</div>
+	 
+		<div class="row white-bg">
+			<div class="col">
+				<h2>Known SC Meteorites</h2>
+				<div style="text-align:center;">
+					<div>
+						<div id="meteoritemap"></div>
+					</div>
+					<p>Locations seen on the map above are not exact.</p>
+					<table class="table-bordered" id="meteoriteTable">
+					  <tr>
+						<th>Year</th>
+						<th>Location</th>
+						<th>Type</th>
+					  </tr>
+					  <tr>
+						<td>1843</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=5059" target="_blank">Bishopville, SC</a></td>
+						<td>Achondrite</td>
+					  </tr>
+					  <tr>
+						<td>1844</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=22779" target="_blank">Ruff's Mountain, Newberry County</a></td>
+						<td>Octahedrite</td>
+					  </tr>
+					  <tr>
+						<td>1849</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=5343" target="_blank">Chesterville, SC</a></td>
+						<td>Ataxite</td>
+					  </tr>
+					  <tr>
+						<td>1857</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=12741" target="_blank">Laurens County</a></td>
+						<td>Octahedrite</td>
+					  </tr>
+					  <tr>
+						<td>1880</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=14644" target="_blank">Lexington County</a></td>
+						<td>Octahedrite</td>
+					  </tr>
+					  <tr>
+						<td>1933</td>
+						<td><a href="https://www.lpi.usra.edu/meteor/metbull.php?sea=South+Carolina&sfor=places&ants=&nwas=&falls=&valids=&stype=exact&lrec=50&map=ge&browse=&country=United+States&srt=name&categ=All&mblist=All&rect=&phot=&strewn=&snew=0&pnt=Normal%20table&code=5340" target="_blank">Cherokee Springs, SC</a></td>
+						<td>Chondrite</td>
+					  </tr>	  
+					</table>
+				</div> 
+			<br>
+			</div>
+		</div>
+	
+	<div class="white-bg">
+	<h2>I think I found a meteorite what should I do before I call?</h2>
+		<h3><em>Read <a href="https://aerolite.org/about/have-you-found-a-meteorite/" target="_blank">this page</a> completely.</em></h3><br>
+		<div class="row">
+        <div class="col-lg-7">
+		<h4>How do I identify a meteorite?</h4>
+            <p>Meteorites can be identified in three basic ways:</p>
+			   <ol>
+			   <li>Using a magnet on a string, the meteorite will sway or attract to the magnet.</li>
+			   <li>Comparing the weight to an earth rock of the same size, the meteorite is very heavy.</li>
+			   <li>Observing the exterior of the meteorite, the meteorite should have shiny black crust, areas of rust, and indentions like a thumb leaves in clay.</li>
+			   </ol>
+        </div> 
+            <div class="col-lg-5 centering"><img src="images/CherokeeSprings_sm.jpg" class="img-fluid" alt="Cherokee Springs, SC Chondrite" title="Cherokee Springs, SC Chondrite"><p class="meteorite graytext">Cherokee Springs, SC Chondrite<br>Photo credit Don Edwards, The Meteoritical Society</p></div>
+        </div>  
+		</div>		
+
+	
+		<div class="white-bg">
+			<h2>Image Gallery</h2>
+				<div class="row text-center text-lg-center">
+					<div class="col-lg-4 col-md-4 col-xs-4">
+						<a href="images/meteorites_clip_image001_0001.jpg" class="d-block mb-4 h-100" data-lightbox="Meteorite" data-title="Meteorite with a Strong Magnet (Photo credit: David Draper)" data-alt="Meteorite with a Strong Magnet (Photo credit: David Draper)">
+							<img class="img-fluid img-thumbnail"  src="images/meteorites_clip_image001_0001.jpg" alt="Meteorite1" title="Meteorite1">
+							<p>Meteorite with a Strong Magnet<br>Photo credit: David Draper</p>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-xs-4">
+						<a href="images/meteorites_clip_image001_0003.jpg" class="d-block mb-4 h-100" data-lightbox="Meteorite" data-title="Meteorite with Black Crust (Photo credit: Eric Twelker)" data-alt="Meteorite with Black Crust (Photo credit: Eric Twelker)">
+							<img class="img-fluid img-thumbnail"  src="images/meteorites_clip_image001_0003.jpg" alt="Meteorite2" title="Meteorite2">
+							<p>Meteorite with Black Crust<br>Photo credit: Eric Twelker</p>
+						</a>
+					</div>			
+					<div class="col-lg-4 col-md-4 col-xs-4">
+						<a href="images/meteorites_clip_image001.jpg" class="d-block mb-4 h-100" data-lightbox="Meteorite" data-title="Meteorite with Thumb Impressions and Rust (Photo credit: Geoffrey Notkin)" data-alt="Meteorite with Thumb Impressions and Rust (Photo credit: Geoffrey Notkin)">
+							<img class="img-fluid img-thumbnail"  src="images/meteorites_clip_image001.jpg" alt="Meteorite3" title="Meteorite3">
+							<p>Meteorite with Thumb Impressions and Rust<br>Photo credit: Geoffrey Notkin</p>
+						</a>
+					</div>
+				</div>
+				<div class="row text-center text-lg-center">
+					<div class="col-lg-4 col-md-4 col-xs-4">
+						<a href="images/meteorites_clip_image001_0005.jpg" class="d-block mb-4 h-100" data-lightbox="Meteorite" data-title="Fake- This is a terrestrial rock. Note the vesicles (holes caused by escaping gas). Meteorites do not have vesicles. (Photo credit: Geoffrey Notkin)" data-alt="Fake- This is a terrestrial rock. Note the vesicles (holes caused by escaping gas). Meteorites do not have vesicles. (Photo credit: Geoffrey Notkin)">
+							<img class="img-fluid img-thumbnail"  src="images/meteorites_clip_image001_0005.jpg" alt="Meteorite4" title="Meteorite4">
+							<p><strong>Fake</strong> This is a terrestrial rock. Note the vesicles (holes caused by escaping gas). Meteorites do not have vesicles.<br>Photo credit: Geoffrey Notkin</p>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-xs-4">
+						<a href="images/meteorites_clip_image001_0006.jpg" class="d-block mb-4 h-100" data-lightbox="Meteorite" data-title="Fake- Slag is commonly mis-identified as Meteorite. Slag is a man-made metallic by-product, produced by runoff from smelters. (Photo credit: Ken Newton)" data-alt="Fake- Slag is commonly mis-identified as Meteorite. Slag is a man-made metallic by-product, produced by runoff from smelters. (Photo credit: Ken Newton)">
+							<img class="img-fluid img-thumbnail"  src="images/meteorites_clip_image001_0006.jpg" alt="Meteorite5" title="Meteorite5">
+							<p><strong>Fake</strong> Slag is commonly mis-identified as Meteorite. Slag is a man-made metallic by-product, produced by runoff from smelters.<br>Photo credit: Ken Newton</p>
+						</a>
+					</div>			
+				</div>
+		</div>
+		
+		<div class="white-bg">
+			<h2>Quick Links</h2>
+			<ul>
+				<li><a href="https://geogallery.si.edu/meteorites" target="_blank">Smithsonian Meteorite Gallery</a></li>
+				<li><a href="http://meteorite.org/" target="_blank">Meterorite.org</a></li>
+				<li><a href="https://aerolite.org/about/have-you-found-a-meteorite/" target="_blank">A Comprehensive Guide to Meteorite Identification</a></li>
+			</ul>
+		</div>
+   </div>              
+
+	
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center">     	
+				<p><strong>Links</strong><br>
+					<a href="SCO2/index.html">Carbon Sequestration</a>
+					<br><a href="earthquakes.html">Earthquakes in SC</a>
+					<br><a href="https://earthquake.usgs.gov/ens/">Earthquake Notification Service</a>
+					<br><a href="education.html#rockandmineral">Rocks and Minerals Kit</a>
+					<br><a href="meteorites.html">Meteorites</a>
+					<br><a href="photo-gallery.html">Photo Galleries</a>
+					<br><a href="minerals.html">Mineral Resources</a>
+					<br><a href="segsa.html">SEGSA Presentations</a>
+					<br><a href="http://hydrology.dnr.sc.gov/index.html">Hydrology Section</a>				
+					<br><a href="http://hydrology.dnr.sc.gov/water-planning.html">SC Water Plan</a>
+					<br><a href="http://www.dnr.sc.gov/water/flood/index.html">Flood Mitigation Program</a>
+					<br><a href="geology-news.html">Archived Survey News</a>
+					<br><a href="links.html">Helpful Links</a></p>
+                </div>
+				<div class="col-lg-6 text-center">                
+                    <p>South Carolina Geological Survey<br>
+                        5 Geology Road<br>
+                        Columbia, SC 29212<br>
+                        <a href="index.html">dnr.sc.gov/geology/index.html</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/geology/index.html"><img src="images/SCGSlogo.png" alt="SCGS logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
+            
+            </div>
+            
+        </div>        
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>  
+	<script src="js/lightbox.min.js"></script>
+	
+		<!--Leaflet JavaScript-->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+    
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.8"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector@1.0.7/dist/esri-leaflet-vector.js"></script>
+	<script src="js/meteoritemap.js"></script>
+
+  </body>
+
+</html>
