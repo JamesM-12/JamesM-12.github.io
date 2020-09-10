@@ -176,7 +176,7 @@ a {text-decoration: underline;}
 
 /*FOOTER*/
 footer {
-    background-color: #6e7b82;
+    background-color: #a7acaf;
 }
 
 .footer-logo{
@@ -412,6 +412,12 @@ h2:target {
     right:10px
 }
 
+@media (max-width: 1090px) {
+    #survey-logo {
+        display: none;
+    }
+}
+
 #quadmap {
 	display: block;
 	margin-left: auto;
@@ -450,4 +456,13 @@ h2:target {
 
 .halfwidth {
 	width: 50%;
+}
+
+#pub-map {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    width:95%;
+    height:500px;
+    background-color:white;
 }
